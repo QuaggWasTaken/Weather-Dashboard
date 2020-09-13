@@ -17,17 +17,24 @@ ul {
 ul li {
     list-style-type: none;
     width: 100%;
+    background-color: white;
 }
 
 #search-button {
     background-color: royalblue;
+}
+
+#search-button span {
     color: white;
 }
 
 #search-div, #prev-div{
-    background-color: white;
     width: 100%;
     margin-left: .5em;
+}
+
+#search-div {
+    background-color: white;
 }
 
 #prev-div ul{
