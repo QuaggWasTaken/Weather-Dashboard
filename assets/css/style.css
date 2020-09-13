@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(241, 239, 239);
+}
+
+h1{
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+ul li {
+    list-style-type: none;
+    width: 100%;
+}
+
+#search-button {
+    background-color: royalblue;
+    color: white;
+}
+
+#search-div, #prev-div{
+    background-color: white;
+    width: 100%;
+    margin-left: .5em;
+}
+
+#prev-div ul{
+    height: 400px;
+}
+
+#search-h2 {
+    min-width: fit-content;
+}
+
+#search-h2 * {
+    padding-top: .25em;
+}
+
+#prev-cities {
+    height: 100%;
+}
+
+#prev-cities li {
+    height: 1fr;
+    padding: 7px;
+}
+
+#uv span {
+    color: white;
+    padding: 4px;
+}
