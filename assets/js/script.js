@@ -40,18 +40,18 @@ function cityList() {
 }
 
 function displayWeather(city) {
-    $.ajax(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIKey}&units=imperial`)
+    $.ajax(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIKey}&units=imperial`)
         .then(function (result) {
             console.log(result)
             console.log(currentWeatherEl[0])
             $("#city-name").text(result.name);
             $("#date").text(moment().format("MM/DD/YYYY"));
-            $("#emoji").attr("src", `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`)
+            $("#emoji").attr("src", `https://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`)
             $("#temp-span").text(result.main.temp)
             $("#humid-span").text(result.main.humidity)
             $("#wind-span").text(result.wind.speed)
             $("#right").show()
-            return $.ajax(`http://api.openweathermap.org/data/2.5/uvi?&appid=${weatherAPIKey}&lat=${result.coord.lat}&lon=${result.coord.lon}`)
+            return $.ajax(`https://api.openweathermap.org/data/2.5/uvi?&appid=${weatherAPIKey}&lat=${result.coord.lat}&lon=${result.coord.lon}`)
         })
         .then(function (result) {
             console.log(result);
@@ -80,7 +80,7 @@ function displayWeather(city) {
                     <div class="card" style="width: 1fr;">
                         <div class="card-body">
                             <h5 class="card-title">${moment(day.dt, "X").format("MM/DD/YYYY")}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=""></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=""></h6>
                             <p class="card-text">Temp: <span class="card-temp"></span>${day.temp.day} °F</p>
                             <p class="card-text">Humidity: <span class="card-humid">${day.humidity}</span>%</p>
                         </div>
