@@ -1,4 +1,3 @@
-
 const currentWeatherEl = $("#weather-now");
 const prevCitiesEl = $("#prev-cities");
 const cityInput = $("#city-input");
@@ -9,12 +8,14 @@ $("#right").hide();
 cityList();
 
 $("#search-button").click(function () {
-    displayWeather(cityInput[0].value);
-    prevCitiesList.unshift(cityInput[0].value);
-    if (prevCitiesList.length >= 11) {
-        prevCitiesList = prevCitiesList.slice(0, 10)
+    if (cityInput[0].value != "") {
+        displayWeather(cityInput[0].value);
+        prevCitiesList.unshift(cityInput[0].value);
+        if (prevCitiesList.length >= 11) {
+            prevCitiesList = prevCitiesList.slice(0, 10)
+        }
+        cityList();
     }
-    cityList();
 });
 
 function cityList() {
@@ -70,7 +71,7 @@ function displayWeather(city) {
         .then(function (result) {
             console.log(result);
             var daily = result.daily.slice(0, 6)
-            
+
             $("#future-cards").html("")
             for (let i = 0; i < daily.length; i++) {
                 const day = daily[i];
